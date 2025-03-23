@@ -15,39 +15,39 @@
 }
 
 .weather-icon {
-  max-width: 160px;
-  max-height: 160px;
-  padding: 10px 0;
+  max-width: 130px;
+  max-height: 130px;
+  padding: 5px 0;
 }
 .weather-icon.img-fluid {
-  width: 200px;
-  height: 200px;
+  width: 160px;
+  height: 160px;
 }
 .temperature {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   margin-top: 10px;
 }
 
 .location {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 /* Weather Data */
 .weather-data {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+  margin-top: 10px;
 }
 
 .weather-icon-small {
-  max-width: 50px;
-  margin-right: 10px;
+  max-width: 40px;
+  max-height: 40px;
 }
-
+.weather-data span {
+  font-size: 14px;
+  font-weight: 400;
+}
 /* 5-Day Forecast */
 .forecast {
   margin-top: 40px;
@@ -62,20 +62,35 @@
 
 .forecast-list {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-direction: wrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   overflow-x: auto;
   gap: 15px;
+  overflow-x: hidden;
+  width: 100%;
 }
 @media (max-width: 1200px) {
+  .weather-icon.img-fluid {
+    width: 130px;
+    height: 130px;
+  }
+  .temperature {
+    font-size: 32px;
+    margin-top: 8px;
+  }
+
+  .location {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
   .forecast-list {
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
   }
 
   .forecast-title {
-    text-align: left;
+    text-align: center;
   }
 
   .weather-icon {
@@ -85,18 +100,36 @@
 }
 
 @media (max-width: 768px) {
-  .temperature {
-    font-size: 25px;
+  .back-to-home {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
   }
-
-  .location {
+  .weather-icon.img-fluid {
+    width: 100px;
+    height: 100px;
+  }
+  .temperature {
     font-size: 20px;
   }
 
+  .location {
+    font-size: 16px;
+  }
+
   .weather-data {
-    flex-direction: column;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+  .weather-data .col-6 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
     gap: 10px;
+    margin-bottom: 10px;
   }
 
   .forecast-list {

@@ -4,8 +4,8 @@
   padding: 15px;
   text-align: center;
   color: white;
-  width: 170px; /* Fixed width */
-  height: 210px; /* Fixed height */
+  width: 175px; 
+  height: 210px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -15,11 +15,6 @@
 
 .day-forecast:hover {
   transform: scale(1.05);
-}
-
-.day-forecast h4 {
-  font-size: 14px;
-  margin-bottom: 5px;
 }
 
 .weather-icon {
@@ -34,16 +29,38 @@
 
 .weather-details p {
   font-size: 12px;
-  margin: 0;
+  margin: 0 0 5px 0;
 }
 
-/* Ensure uniform card size on all screens */
+@media (max-width: 1200px) {
+  .day-forecast {
+    width: 155px;
+    height: 195px;
+    margin: 0;
+  }
+  .day-forecast h6 {
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+  .weather-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .temperature p {
+    font-size: 16px;
+  }
+
+  .weather-details p {
+    font-size: 10px;
+  }
+}
 @media (max-width: 768px) {
   .day-forecast {
-    width: 100px;
-    height: 160px;
+    width: 160px;
+    height: 180px;
     padding: 10px;
-    margin: 20px;
+    margin: 10px;
   }
 
   .weather-icon {
@@ -53,7 +70,6 @@
 
   .temperature p,
   .weather-details p {
-    font-size: 8px;
+    font-size: 14px;
   }
 }
-

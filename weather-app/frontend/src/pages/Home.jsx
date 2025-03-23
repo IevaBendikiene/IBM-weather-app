@@ -114,11 +114,14 @@ const Home = () => {
       <h3 className="mt-4">Most Searched Cities</h3>
       <div className="row justify-content-center popular-cities">
         {popularCities.map((city, index) => (
-          <div key={index} className="col-12 col-sm-4+
-          ">
-          <Link  to={`/weather/${city}`} className="city-link">
-            {cityNames[city] || city}{" "}
-          </Link>
+          <div
+            key={index}
+            className="col-12 col-sm-4
+          "
+          >
+            <Link to={`/weather/${city}`} className="city-link">
+              {cityNames[city] || city}{" "}
+            </Link>
           </div>
         ))}
       </div>

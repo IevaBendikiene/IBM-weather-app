@@ -145,7 +145,7 @@ const Weather = () => {
         </div>
       </div>
 
-      <div className="row weather-data text-center">
+      <div className="row weather-data text-center d-flex justify-content-center">
         <div className="col-6 col-md-4 d-flex alighn-items-center">
           <img
             src={humidity}
@@ -153,14 +153,14 @@ const Weather = () => {
             className="weather-icon-small"
           />
           <div>
-            <p>{weatherData.humidity}%</p>
+            <p className="mb-0">{weatherData.humidity}%</p>
             <span>Humidity</span>
           </div>
         </div>
-        <div className="col-6 col-md-4 d-flex alighn-items-center">
+        <div className="col-6 col-md-4 d-flex alighn-items-center justify-content-center">
           <img src={windSpeed} alt="Wind-icon" className="weather-icon-small" />
           <div>
-            <p>{weatherData.windSpeed} Km/h</p>
+            <p className="mb-0">{weatherData.windSpeed} Km/h</p>
             <span>Wind Speed</span>
           </div>
         </div>
@@ -169,7 +169,7 @@ const Weather = () => {
         <h3 className="forecast-title">5-Day Forecast</h3>
         <div className="row justify-content-center gap2">
           {weatherData.forecast.map((day, index) => (
-            <div key={index} className="col-6 col-md-2 forecast-list">
+            <div key={index} className="col-6 col-sm-4 col-md-3 col-lg-2">
               <DayForecast
                 key={index}
                 date={day.date}

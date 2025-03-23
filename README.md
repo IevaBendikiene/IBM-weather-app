@@ -97,11 +97,32 @@ node server.js
 
 ```
 
+## GCP deployment
+update vite.config.js and backend urls
+```
+# Deploy weather-app to Google Cloud Run
+# Open terminal and run the following commands
+# Authenticates the current user with Google Cloud using a web browser
+gcloud auth login
+
+# Configures Docker to authenticate with Google Artifact Registry
+gcloud auth configure-docker
+
+# Creates a new Docker Artifact Registry named 'weather-repo' in region europe-west10
+gcloud create artifact registry weather-repo --location=europe-west10
+
+# Builds the Docker image and uploads it to the Artifact Registry with the given tag
+gcloud builds submit --tag europe-west10-docker.pkg.dev/<GCP_PROJECT_ID>/weather-repo/weather-app:v1
+
+# Deploys the Docker image to Cloud Run in region europe-west10, making it publicly accessible
+gcloud run deploy weather-app --region europe-west10 --allow-unauthenticated --image europe-west1-docker.pkg.dev/<GCP_PROJECT_ID>/weather-repo/weather-app:v1
+```
+
 ## 🔧 Future Improvements (Ideas)
 
 - Store logs in a file or database
 - Add city autocomplete or search
-- Deploy to GCP / Firebase
+- Deploy to GCP / MongoDb
 - Add unit tests and CI pipeline
 
 ---
