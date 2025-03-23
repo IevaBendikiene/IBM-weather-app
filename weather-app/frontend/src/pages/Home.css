@@ -1,0 +1,67 @@
+.home {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 8px;
+  background: none;
+}
+
+.search-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #007bff;
+}
+
+.popular-cities {
+  margin-top: 20px;
+}
+
+.popular-cities .city-link {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  display: block;
+  padding: 10px 0;
+}
+
+.popular-cities .city-link:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
+
+@media (max-width: 576px) {
+  .search-bar {
+    padding: 8px;
+  }
+
+  .search-bar input {
+    font-size: 8px;
+    padding: 6px;
+  }
+
+  .search-icon {
+    font-size: 20px;
+  }
+
+  .popular-cities .city-link {
+    font-size: 18px;
+  }
+}
+
